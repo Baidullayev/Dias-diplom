@@ -1,0 +1,9 @@
+c:\users\baidullayev_a\documents\visual studio 2015\Projects\InterShipmentSystem\InterShipmentSystem\bin\Debug\InterShipmentSystem.exe.config
+c:\users\baidullayev_a\documents\visual studio 2015\Projects\InterShipmentSystem\InterShipmentSystem\bin\Debug\InterShipmentSystem.exe
+c:\users\baidullayev_a\documents\visual studio 2015\Projects\InterShipmentSystem\InterShipmentSystem\bin\Debug\InterShipmentSystem.pdb
+c:\users\baidullayev_a\documents\visual studio 2015\Projects\InterShipmentSystem\InterShipmentSystem\obj\Debug\InterShipmentSystem.csprojResolveAssemblyReference.cache
+c:\users\baidullayev_a\documents\visual studio 2015\Projects\InterShipmentSystem\InterShipmentSystem\obj\Debug\InterShipmentSystem.Properties.Resources.resources
+c:\users\baidullayev_a\documents\visual studio 2015\Projects\InterShipmentSystem\InterShipmentSystem\obj\Debug\InterShipmentSystem.csproj.GenerateResource.Cache
+c:\users\baidullayev_a\documents\visual studio 2015\Projects\InterShipmentSystem\InterShipmentSystem\obj\Debug\InterShipmentSystem.exe
+c:\users\baidullayev_a\documents\visual studio 2015\Projects\InterShipmentSystem\InterShipmentSystem\obj\Debug\InterShipmentSystem.pdb
+c:\users\baidullayev_a\documents\visual studio 2015\Projects\InterShipmentSystem\InterShipmentSystem\obj\Debug\InterShipmentSystem.MainForm.resources
