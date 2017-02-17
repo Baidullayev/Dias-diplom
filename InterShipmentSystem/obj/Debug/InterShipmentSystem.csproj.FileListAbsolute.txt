@@ -7,3 +7,5 @@ c:\users\baidullayev_a\documents\visual studio 2015\Projects\InterShipmentSystem
 c:\users\baidullayev_a\documents\visual studio 2015\Projects\InterShipmentSystem\InterShipmentSystem\obj\Debug\InterShipmentSystem.exe
 c:\users\baidullayev_a\documents\visual studio 2015\Projects\InterShipmentSystem\InterShipmentSystem\obj\Debug\InterShipmentSystem.pdb
 c:\users\baidullayev_a\documents\visual studio 2015\Projects\InterShipmentSystem\InterShipmentSystem\obj\Debug\InterShipmentSystem.MainForm.resources
+C:\Users\baidullayev_a\documents\visual studio 2015\Projects\InterShipmentSystem\InterShipmentSystem\obj\Debug\InterShipmentSystem.SettingsForm.resources
+C:\Users\baidullayev_a\documents\visual studio 2015\Projects\InterShipmentSystem\InterShipmentSystem\obj\Debug\InterShipmentSystem.OrdersForm.resources

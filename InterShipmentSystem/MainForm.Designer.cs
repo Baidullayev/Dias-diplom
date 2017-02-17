@@ -131,6 +131,7 @@
             this.ConfigBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.ConfigBox.TabIndex = 4;
             this.ConfigBox.TabStop = false;
+            this.ConfigBox.Click += new System.EventHandler(this.ConfigBox_Click);
             this.ConfigBox.MouseMove += new System.Windows.Forms.MouseEventHandler(this.ConfigBox_MouseMove);
             // 
             // CityBox
@@ -179,6 +180,7 @@
             this.OrderBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.OrderBox.TabIndex = 0;
             this.OrderBox.TabStop = false;
+            this.OrderBox.Click += new System.EventHandler(this.OrderBox_Click);
             this.OrderBox.MouseMove += new System.Windows.Forms.MouseEventHandler(this.OrderBox_MouseMove);
             // 
             // MainForm
@@ -202,6 +204,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Автоматизированная система отдела междугородних перевозок";
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.MainForm_MouseMove);

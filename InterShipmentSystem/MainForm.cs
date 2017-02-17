@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -20,6 +21,10 @@ namespace InterShipmentSystem
         public static string dbName;
         public static string loginSql;
         public static string passwordSql;
+
+        public static string connectionString = null;
+        public static bool connectionState = false;
+
         public MainForm()
         {
             InitializeComponent();
@@ -109,6 +114,42 @@ namespace InterShipmentSystem
             dbName = myIni.Read("dbName", "SqlServer connection parameters");
             loginSql = myIni.Read("login", "SqlServer connection parameters");
             passwordSql = myIni.Read("password", "SqlServer connection parameters");
+
+
+            // проверка подключения
+            if (serverName != "null" || instanceName != "null" || dbName != "null" || loginSql != "null" || passwordSql != "null")
+            {
+                try
+                {
+                    String str = "server=" + serverName + "\\" + instanceName + ";database=" + dbName + ";UID=" + loginSql + ";password=" + passwordSql;
+                    SqlConnection con = new SqlConnection(str);
+                    con.Open();
+                    connectionState = true;
+                    con.Close();
+                    connectionString = str;
+
+                }
+                catch (Exception es)
+                {
+                    connectionState = false;                    
+                    //ConnectionStripLabel.Text = "Соединение с БД не установлено";
+                    MessageBox.Show(es.Message);
+
+                }
+            }
+
+        }
+
+        private void ConfigBox_Click(object sender, EventArgs e)
+        {
+            SettingsForm settingsForm = new SettingsForm();
+            settingsForm.Show();
+        }
+
+        private void OrderBox_Click(object sender, EventArgs e)
+        {
+            OrdersForm ordersForm = new OrdersForm();
+            ordersForm.Show();
         }
     }
 }
