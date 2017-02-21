@@ -24,6 +24,7 @@ namespace InterShipmentSystem
         private void OrdersForm_Load(object sender, EventArgs e)
         {
             searchingAtrComboBox.SelectedIndex = 0;
+            dateTimePicker1.Value.ToShortDateString();
             if (MainForm.connectionState)
             {
                 dataGridView1.DataSource = bindingSource1;
@@ -155,5 +156,110 @@ namespace InterShipmentSystem
         {
 
         }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            showMore();
+        }
+        public void showMore()
+        {
+            ClientBox.Items.Clear();
+            CarrierBox.Items.Clear();
+            DestinationCityBox.Items.Clear();
+            DepartureCityBox.Items.Clear();
+            string record_id = this.dataGridView1.CurrentRow.Cells["order_id"].Value.ToString();
+            //MessageBox.Show(record_id);
+            //Получение списка клиентов
+            using (SqlConnection con = new SqlConnection(MainForm.connectionString))
+            {
+                con.Open();
+
+                string command = "select company_name from Clients";
+                SqlCommand cmd = new SqlCommand(command, con);
+
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                string[] arr = new string[5];
+                while (reader.Read())
+                {
+                    ClientBox.Items.Add(reader["company_name"].ToString());
+                }
+                string company_name = this.dataGridView1.CurrentRow.Cells["client_name"].Value.ToString();       
+                ClientBox.SelectedIndex = ClientBox.FindString(company_name);
+                con.Close();
+            }
+
+
+            //Получени списка перевозщиков
+            using (SqlConnection con = new SqlConnection(MainForm.connectionString))
+            {
+                con.Open();
+
+                string command = "select carrier_name from Carriers";
+                SqlCommand cmd = new SqlCommand(command, con);
+
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                string[] arr = new string[5];
+                while (reader.Read())
+                {
+                    CarrierBox.Items.Add(reader["carrier_name"].ToString());
+                }
+                string carrier_name = this.dataGridView1.CurrentRow.Cells["carrier_name"].Value.ToString();
+                CarrierBox.SelectedIndex = CarrierBox.FindString(carrier_name);
+                con.Close();
+            }
+
+
+            //Получение списка городов 
+            using (SqlConnection con = new SqlConnection(MainForm.connectionString))
+            {
+                con.Open();
+
+                string command = "select city_name from Cities";
+                SqlCommand cmd = new SqlCommand(command, con);
+
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                string[] arr = new string[5];
+                while (reader.Read())
+                {
+                    DepartureCityBox.Items.Add(reader["city_name"].ToString());
+                    DestinationCityBox.Items.Add(reader["city_name"].ToString());
+                }
+                string destination_city = this.dataGridView1.CurrentRow.Cells["destination_city"].Value.ToString();                
+                DestinationCityBox.SelectedIndex = DestinationCityBox.FindString(destination_city);
+
+
+                string departure_city = this.dataGridView1.CurrentRow.Cells["departure_city"].Value.ToString();
+                DepartureCityBox.SelectedIndex = DepartureCityBox.FindString(departure_city);
+
+                con.Close();
+            }
+
+            /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            string order_status = this.dataGridView1.CurrentRow.Cells["order_status"].Value.ToString();
+            statusBox.SelectedIndex = statusBox.FindString(order_status);
+            /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            string load_type = this.dataGridView1.CurrentRow.Cells["load_type"].Value.ToString();
+            loadTypeBox.SelectedIndex = loadTypeBox.FindString(load_type);
+            /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            string carriage_type = this.dataGridView1.CurrentRow.Cells["carriage_type"].Value.ToString();
+            carriageTypeBox.SelectedIndex = carriageTypeBox.FindString(order_status);
+            /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            loadWeightBox.Text = this.dataGridView1.CurrentRow.Cells["load_weight"].Value.ToString();
+            /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            loadVolumeBox.Text = this.dataGridView1.CurrentRow.Cells["load_volume"].Value.ToString();
+            /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            loadNameBox.Text = this.dataGridView1.CurrentRow.Cells["load_name"].Value.ToString();
+            /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            costBox.Text = this.dataGridView1.CurrentRow.Cells["cost"].Value.ToString();
+            /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            DateTime order_date = Convert.ToDateTime(this.dataGridView1.CurrentRow.Cells["order_date"].Value.ToString());
+            dateTimePicker1.Value = order_date;
+            /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            
+        }
+
     }
 }
