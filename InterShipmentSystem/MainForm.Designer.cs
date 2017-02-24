@@ -156,6 +156,7 @@
             this.DeliverBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.DeliverBox.TabIndex = 2;
             this.DeliverBox.TabStop = false;
+            this.DeliverBox.Click += new System.EventHandler(this.DeliverBox_Click);
             this.DeliverBox.MouseMove += new System.Windows.Forms.MouseEventHandler(this.DeliverBox_MouseMove);
             // 
             // ClientBox
@@ -168,6 +169,7 @@
             this.ClientBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.ClientBox.TabIndex = 1;
             this.ClientBox.TabStop = false;
+            this.ClientBox.Click += new System.EventHandler(this.ClientBox_Click);
             this.ClientBox.MouseMove += new System.Windows.Forms.MouseEventHandler(this.ClientBox_MouseMove);
             // 
             // OrderBox

@@ -148,8 +148,23 @@ namespace InterShipmentSystem
 
         private void OrderBox_Click(object sender, EventArgs e)
         {
+            this.Hide();
             OrdersForm ordersForm = new OrdersForm();
             ordersForm.Show();
+        }
+
+        private void ClientBox_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            ClientsForm clientsForm = new ClientsForm();
+            clientsForm.Show();
+        }
+
+        private void DeliverBox_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            CarriersForm carriersForm = new CarriersForm();
+            carriersForm.Show();
         }
     }
 }

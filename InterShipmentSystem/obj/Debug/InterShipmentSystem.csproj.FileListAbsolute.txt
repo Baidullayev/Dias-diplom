@@ -9,3 +9,8 @@ c:\users\baidullayev_a\documents\visual studio 2015\Projects\InterShipmentSystem
 c:\users\baidullayev_a\documents\visual studio 2015\Projects\InterShipmentSystem\InterShipmentSystem\obj\Debug\InterShipmentSystem.MainForm.resources
 C:\Users\baidullayev_a\documents\visual studio 2015\Projects\InterShipmentSystem\InterShipmentSystem\obj\Debug\InterShipmentSystem.SettingsForm.resources
 C:\Users\baidullayev_a\documents\visual studio 2015\Projects\InterShipmentSystem\InterShipmentSystem\obj\Debug\InterShipmentSystem.OrdersForm.resources
+C:\Users\baidullayev_a\documents\visual studio 2015\Projects\InterShipmentSystem\InterShipmentSystem\obj\Debug\InterShipmentSystem.CreateOrderForm.resources
+C:\Users\baidullayev_a\documents\visual studio 2015\Projects\InterShipmentSystem\InterShipmentSystem\obj\Debug\InterShipmentSystem.ClientsForm.resources
+C:\Users\baidullayev_a\documents\visual studio 2015\Projects\InterShipmentSystem\InterShipmentSystem\obj\Debug\InterShipmentSystem.NewClientForm.resources
+C:\Users\baidullayev_a\documents\visual studio 2015\Projects\InterShipmentSystem\InterShipmentSystem\obj\Debug\InterShipmentSystem.CarriersForm.resources
+C:\Users\baidullayev_a\documents\visual studio 2015\Projects\InterShipmentSystem\InterShipmentSystem\obj\Debug\InterShipmentSystem.NewCarrierForm.resources
