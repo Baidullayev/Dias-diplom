@@ -68,20 +68,28 @@ namespace InterShipmentSystem
             //Получени списка клиентов
             using (SqlConnection con = new SqlConnection(MainForm.connectionString))
             {
-                con.Open();
-
-                string command = "select company_name from Clients";
-                SqlCommand cmd = new SqlCommand(command, con);
-
-                SqlDataReader reader = cmd.ExecuteReader();
-
-                string[] arr = new string[5];
-                while (reader.Read())
+                try
                 {
-                    ClientBox.Items.Add(reader["company_name"].ToString());
-                }
+                    con.Open();
 
-                con.Close();
+                    string command = "select company_name from Clients";
+                    SqlCommand cmd = new SqlCommand(command, con);
+
+                    SqlDataReader reader = cmd.ExecuteReader();
+
+                    string[] arr = new string[5];
+                    while (reader.Read())
+                    {
+                        ClientBox.Items.Add(reader["company_name"].ToString());
+                    }
+
+                    con.Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                
             }
 
 

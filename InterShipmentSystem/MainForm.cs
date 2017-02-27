@@ -166,5 +166,18 @@ namespace InterShipmentSystem
             CarriersForm carriersForm = new CarriersForm();
             carriersForm.Show();
         }
+
+        private void CityBox_Click(object sender, EventArgs e)
+        {
+            CitiesForm citiesForm = new CitiesForm();
+            this.Hide();
+            citiesForm.Show();
+        }
+
+        private void InfoBox_Click(object sender, EventArgs e)
+        {
+            InfoForm infoForm = new InfoForm();
+            infoForm.Show();
+        }
     }
 }

@@ -54,17 +54,11 @@ namespace InterShipmentSystem
                 dataGridView1.Columns[7].Width = 100;
                 dataGridView1.Columns[11].Width = 75;
                 dataGridView1.Columns[12].Width = 55;
-               
-                //string sqlCommand = "SELECT * FROM Clients";
-                //SqlConnection connection = new SqlConnection(MainForm.connectionString);
-                //SqlDataAdapter dataadapter = new SqlDataAdapter(sqlCommand, connection);
-                //DataSet ds = new DataSet();
-                //connection.Open();
-                //dataadapter.Fill(ds, "Clients_table");
-                //connection.Close();
-                //dataGridView1.DataSource = ds;
-                //dataGridView1.DataMember = "Clients_table";
+            }else
+            {
+                MessageBox.Show("Подключение к БД не установлено!");
             }
+            
             
 
 
@@ -209,7 +203,12 @@ namespace InterShipmentSystem
             string command = "select * from Orders where " + searchingAtribute + " Like " + "'%" + searchInputBox.Text + "%'";
 
             //MessageBox.Show(command);
-            GetData(command);
+            if(MainForm.connectionState)
+            {
+                GetData(command);
+            }
+            else { MessageBox.Show("Подключение к БД не установлена!"); }
+            
         }
 
         private void searchingAtrComboBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -391,7 +390,11 @@ namespace InterShipmentSystem
 
         private void OrdersForm_Activated(object sender, EventArgs e)
         {
-            GetData(dataAdapter.SelectCommand.CommandText);
+            if (MainForm.connectionState)
+            {
+                GetData(dataAdapter.SelectCommand.CommandText);
+            }
+            
         }
     }
 }

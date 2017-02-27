@@ -34,6 +34,10 @@ namespace InterShipmentSystem
                 dataGridView1.Columns[4].HeaderText = "Электронная почта";
                 dataGridView1.Columns[5].HeaderText = "Адрес";
             }
+            else
+            {
+                MessageBox.Show("Подключение к БД не установлено!");
+            }
         }
         private void label5_Click(object sender, EventArgs e)
         {
@@ -207,7 +211,11 @@ namespace InterShipmentSystem
 
         private void ClientsForm_Activated(object sender, EventArgs e)
         {
-            GetData(dataAdapter.SelectCommand.CommandText);
+            if(MainForm.connectionState)
+            {
+                GetData(dataAdapter.SelectCommand.CommandText);
+            }            
+            
         }
     }
 }

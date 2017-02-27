@@ -1,6 +1,6 @@
 ﻿namespace InterShipmentSystem
 {
-    partial class CarriersForm
+    partial class CitiesForm
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CarriersForm));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CitiesForm));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
@@ -39,11 +39,9 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.button1 = new System.Windows.Forms.Button();
             this.saveButton = new System.Windows.Forms.Button();
-            this.phoneNumberBox = new System.Windows.Forms.TextBox();
+            this.postIndexBox = new System.Windows.Forms.TextBox();
             this.phoneNumberLabel = new System.Windows.Forms.Label();
-            this.mailBox = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.companyNameBox = new System.Windows.Forms.TextBox();
+            this.cityNameBox = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox1.SuspendLayout();
@@ -62,10 +60,9 @@
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(630, 249);
-            this.groupBox1.TabIndex = 10;
+            this.groupBox1.TabIndex = 12;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Список";
-            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // dataGridView1
             // 
@@ -105,18 +102,18 @@
             // createButton
             // 
             this.createButton.ForeColor = System.Drawing.Color.Black;
-            this.createButton.Location = new System.Drawing.Point(169, 159);
+            this.createButton.Location = new System.Drawing.Point(448, 117);
             this.createButton.Name = "createButton";
             this.createButton.Size = new System.Drawing.Size(141, 23);
             this.createButton.TabIndex = 12;
-            this.createButton.Text = "Новый перевозщик";
+            this.createButton.Text = "Добавить станцию";
             this.createButton.UseVisualStyleBackColor = true;
             this.createButton.Click += new System.EventHandler(this.createButton_Click);
             // 
             // deleteButton
             // 
             this.deleteButton.ForeColor = System.Drawing.Color.Black;
-            this.deleteButton.Location = new System.Drawing.Point(316, 159);
+            this.deleteButton.Location = new System.Drawing.Point(448, 74);
             this.deleteButton.Name = "deleteButton";
             this.deleteButton.Size = new System.Drawing.Size(141, 23);
             this.deleteButton.TabIndex = 11;
@@ -130,24 +127,22 @@
             this.groupBox2.Controls.Add(this.createButton);
             this.groupBox2.Controls.Add(this.deleteButton);
             this.groupBox2.Controls.Add(this.saveButton);
-            this.groupBox2.Controls.Add(this.phoneNumberBox);
+            this.groupBox2.Controls.Add(this.postIndexBox);
             this.groupBox2.Controls.Add(this.phoneNumberLabel);
-            this.groupBox2.Controls.Add(this.mailBox);
-            this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Controls.Add(this.companyNameBox);
+            this.groupBox2.Controls.Add(this.cityNameBox);
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.ForeColor = System.Drawing.Color.Red;
             this.groupBox2.Location = new System.Drawing.Point(13, 277);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(627, 208);
-            this.groupBox2.TabIndex = 11;
+            this.groupBox2.TabIndex = 13;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Детальная информация";
             // 
             // button1
             // 
             this.button1.ForeColor = System.Drawing.Color.Black;
-            this.button1.Location = new System.Drawing.Point(22, 159);
+            this.button1.Location = new System.Drawing.Point(448, 165);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(141, 23);
             this.button1.TabIndex = 13;
@@ -158,7 +153,7 @@
             // saveButton
             // 
             this.saveButton.ForeColor = System.Drawing.Color.Black;
-            this.saveButton.Location = new System.Drawing.Point(463, 159);
+            this.saveButton.Location = new System.Drawing.Point(448, 33);
             this.saveButton.Name = "saveButton";
             this.saveButton.Size = new System.Drawing.Size(141, 23);
             this.saveButton.TabIndex = 10;
@@ -166,69 +161,52 @@
             this.saveButton.UseVisualStyleBackColor = true;
             this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
             // 
-            // phoneNumberBox
+            // postIndexBox
             // 
-            this.phoneNumberBox.Location = new System.Drawing.Point(234, 69);
-            this.phoneNumberBox.Name = "phoneNumberBox";
-            this.phoneNumberBox.Size = new System.Drawing.Size(257, 20);
-            this.phoneNumberBox.TabIndex = 5;
+            this.postIndexBox.Location = new System.Drawing.Point(137, 117);
+            this.postIndexBox.Name = "postIndexBox";
+            this.postIndexBox.Size = new System.Drawing.Size(257, 20);
+            this.postIndexBox.TabIndex = 5;
             // 
             // phoneNumberLabel
             // 
             this.phoneNumberLabel.AutoSize = true;
-            this.phoneNumberLabel.Location = new System.Drawing.Point(141, 72);
+            this.phoneNumberLabel.Location = new System.Drawing.Point(35, 120);
             this.phoneNumberLabel.Name = "phoneNumberLabel";
-            this.phoneNumberLabel.Size = new System.Drawing.Size(87, 13);
+            this.phoneNumberLabel.Size = new System.Drawing.Size(96, 13);
             this.phoneNumberLabel.TabIndex = 4;
-            this.phoneNumberLabel.Text = "Телефон номер";
+            this.phoneNumberLabel.Text = "Почтовый индекс";
             // 
-            // mailBox
+            // cityNameBox
             // 
-            this.mailBox.Location = new System.Drawing.Point(234, 106);
-            this.mailBox.Name = "mailBox";
-            this.mailBox.Size = new System.Drawing.Size(257, 20);
-            this.mailBox.TabIndex = 3;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(124, 109);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(104, 13);
-            this.label4.TabIndex = 2;
-            this.label4.Text = "Электронная почта";
-            // 
-            // companyNameBox
-            // 
-            this.companyNameBox.Location = new System.Drawing.Point(234, 31);
-            this.companyNameBox.Name = "companyNameBox";
-            this.companyNameBox.Size = new System.Drawing.Size(257, 20);
-            this.companyNameBox.TabIndex = 1;
+            this.cityNameBox.Location = new System.Drawing.Point(137, 79);
+            this.cityNameBox.Name = "cityNameBox";
+            this.cityNameBox.Size = new System.Drawing.Size(257, 20);
+            this.cityNameBox.TabIndex = 1;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(80, 34);
+            this.label3.Location = new System.Drawing.Point(10, 86);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(151, 13);
+            this.label3.Size = new System.Drawing.Size(127, 13);
             this.label3.TabIndex = 0;
-            this.label3.Text = "Наименование организации";
+            this.label3.Text = "Наименование станции";
             // 
-            // CarriersForm
+            // CitiesForm
             // 
-            this.AcceptButton = this.saveButton;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(652, 496);
-            this.Controls.Add(this.groupBox2);
+            this.ClientSize = new System.Drawing.Size(648, 494);
             this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.groupBox2);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "CarriersForm";
+            this.Name = "CitiesForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Окно просмотра перевозщиков";
-            this.Activated += new System.EventHandler(this.CarriersForm_Activated);
-            this.Load += new System.EventHandler(this.CarriersForm_Load);
+            this.Text = "Окно просмотра и редактирования списка городов";
+            this.Activated += new System.EventHandler(this.CitiesForm_Activated);
+            this.Load += new System.EventHandler(this.CitiesForm_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -250,11 +228,9 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button saveButton;
-        private System.Windows.Forms.TextBox phoneNumberBox;
+        private System.Windows.Forms.TextBox postIndexBox;
         private System.Windows.Forms.Label phoneNumberLabel;
-        private System.Windows.Forms.TextBox mailBox;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox companyNameBox;
+        private System.Windows.Forms.TextBox cityNameBox;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.BindingSource bindingSource1;
     }

@@ -105,9 +105,9 @@
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label6.Location = new System.Drawing.Point(173, 397);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(55, 16);
+            this.label6.Size = new System.Drawing.Size(64, 16);
             this.label6.TabIndex = 12;
-            this.label6.Text = "Города";
+            this.label6.Text = "Станций";
             // 
             // InfoBox
             // 
@@ -119,6 +119,7 @@
             this.InfoBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.InfoBox.TabIndex = 5;
             this.InfoBox.TabStop = false;
+            this.InfoBox.Click += new System.EventHandler(this.InfoBox_Click);
             this.InfoBox.MouseMove += new System.Windows.Forms.MouseEventHandler(this.InfoBox_MouseMove);
             // 
             // ConfigBox
@@ -144,6 +145,7 @@
             this.CityBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.CityBox.TabIndex = 3;
             this.CityBox.TabStop = false;
+            this.CityBox.Click += new System.EventHandler(this.CityBox_Click);
             this.CityBox.MouseMove += new System.Windows.Forms.MouseEventHandler(this.CityBox_MouseMove);
             // 
             // DeliverBox

@@ -14,3 +14,6 @@ C:\Users\baidullayev_a\documents\visual studio 2015\Projects\InterShipmentSystem
 C:\Users\baidullayev_a\documents\visual studio 2015\Projects\InterShipmentSystem\InterShipmentSystem\obj\Debug\InterShipmentSystem.NewClientForm.resources
 C:\Users\baidullayev_a\documents\visual studio 2015\Projects\InterShipmentSystem\InterShipmentSystem\obj\Debug\InterShipmentSystem.CarriersForm.resources
 C:\Users\baidullayev_a\documents\visual studio 2015\Projects\InterShipmentSystem\InterShipmentSystem\obj\Debug\InterShipmentSystem.NewCarrierForm.resources
+C:\Users\baidullayev_a\documents\visual studio 2015\Projects\InterShipmentSystem\InterShipmentSystem\obj\Debug\InterShipmentSystem.CitiesForm.resources
+C:\Users\baidullayev_a\documents\visual studio 2015\Projects\InterShipmentSystem\InterShipmentSystem\obj\Debug\InterShipmentSystem.NewCityForm.resources
+C:\Users\baidullayev_a\documents\visual studio 2015\Projects\InterShipmentSystem\InterShipmentSystem\obj\Debug\InterShipmentSystem.InfoForm.resources

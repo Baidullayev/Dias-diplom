@@ -11,32 +11,41 @@ using System.Windows.Forms;
 
 namespace InterShipmentSystem
 {
-    public partial class CarriersForm : Form
+    public partial class CitiesForm : Form
     {
-        int carrier_id = -1;
+        int city_id = -1;
         private SqlDataAdapter dataAdapter = new SqlDataAdapter();
-        public CarriersForm()
+        public CitiesForm()
         {
             InitializeComponent();
         }
 
-        private void CarriersForm_Load(object sender, EventArgs e)
+        private void searchInputBox_TextChanged(object sender, EventArgs e)
+        {
+            string command = "select * from Cities where city_name Like " + "'%" + searchInputBox.Text + "%'";
+            GetData(command);
+        }
+
+        private void CitiesForm_Load(object sender, EventArgs e)
         {
             if (MainForm.connectionState)
             {
                 dataGridView1.DataSource = bindingSource1;
-                GetData("select * from Carriers");
-                dataGridView1.Columns[0].HeaderText = "ID организации";
-                dataGridView1.Columns[1].HeaderText = "Наименование организации";
-                dataGridView1.Columns[2].HeaderText = "Телефон номер";
-                dataGridView1.Columns[3].HeaderText = "Электронная почта";
+                GetData("select * from Cities");
+                dataGridView1.Columns[0].HeaderText = "ID города";
+                dataGridView1.Columns[1].HeaderText = "Наименование станции";                
+                dataGridView1.Columns[2].HeaderText = "Почтовый индекс";
+
+                //dataGridView1.Columns[0].Width = 30;
+                //dataGridView1.Columns[1].Width = 100;
+                //dataGridView1.Columns[2].Width = 30;
             }
             else
             {
-                MessageBox.Show("Подключение к БД не установлено!");
+                MessageBox.Show("Подключние к БД не было установлено");
+
             }
         }
-
         private void GetData(string selectCommand)
         {
             try
@@ -49,26 +58,20 @@ namespace InterShipmentSystem
                 dataAdapter.Fill(table);
                 bindingSource1.DataSource = table;
                 dataGridView1.AutoResizeColumns(
-                DataGridViewAutoSizeColumnsMode.AllCellsExceptHeader);
+                DataGridViewAutoSizeColumnsMode.ColumnHeader);
+
+
             }
             catch (SqlException ex)
             {
                 MessageBox.Show(ex.Message);
             }
         }
-
-        private void searchInputBox_TextChanged(object sender, EventArgs e)
-        {
-            string command = "select * from Carriers where carrier_name Like " + "'%" + searchInputBox.Text + "%'";
-            GetData(command);
-        }
         private void showMore()
         {
-            companyNameBox.Text = this.dataGridView1.CurrentRow.Cells["carrier_name"].Value.ToString();
-            mailBox.Text = this.dataGridView1.CurrentRow.Cells["email"].Value.ToString();
-            phoneNumberBox.Text = this.dataGridView1.CurrentRow.Cells["phone_number"].Value.ToString();
-            carrier_id = Convert.ToInt32(this.dataGridView1.CurrentRow.Cells["carrier_id"].Value.ToString());
-
+            cityNameBox.Text = this.dataGridView1.CurrentRow.Cells["city_name"].Value.ToString();
+            postIndexBox.Text = this.dataGridView1.CurrentRow.Cells["post_index"].Value.ToString();
+            city_id = Convert.ToInt32(this.dataGridView1.CurrentRow.Cells["city_id"].Value.ToString());
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -79,7 +82,7 @@ namespace InterShipmentSystem
         private void saveButton_Click(object sender, EventArgs e)
         {
             SqlCommand cmd;
-            if (carrier_id != -1)
+            if (city_id != -1)
             {
 
                 using (SqlConnection con = new SqlConnection(MainForm.connectionString))
@@ -94,13 +97,12 @@ namespace InterShipmentSystem
                         MessageBox.Show(ex.Message);
                     }
 
-                    string command = "update Carriers set carrier_name=@carrier_name, phone_number=@phone_number, email=@email where carrier_id=@carrier_id";
+                    string command = "update Cities set city_name=@city_name, post_index=@post_index where city_id=@city_id";
                     using (cmd = new SqlCommand(command, con))
                     {
-                        cmd.Parameters.AddWithValue("@carrier_id", carrier_id);
-                        cmd.Parameters.AddWithValue("@carrier_name", companyNameBox.Text);
-                        cmd.Parameters.AddWithValue("@phone_number", phoneNumberBox.Text);
-                        cmd.Parameters.AddWithValue("@email", mailBox.Text);
+                        cmd.Parameters.AddWithValue("@city_id", city_id);
+                        cmd.Parameters.AddWithValue("@city_name", cityNameBox.Text);
+                        cmd.Parameters.AddWithValue("@post_index", postIndexBox.Text);                  
                         try
                         {
                             cmd.ExecuteNonQuery();
@@ -122,10 +124,10 @@ namespace InterShipmentSystem
         private void deleteButton_Click(object sender, EventArgs e)
         {
             var result = MessageBox.Show("Вы точно хотите удалить запись?", "Удаление", MessageBoxButtons.YesNo);
-            if (result == DialogResult.Yes && carrier_id!=-1)
+            if (result == DialogResult.Yes && city_id != -1)
             {
-                string record_id = this.dataGridView1.CurrentRow.Cells["carrier_id"].Value.ToString();
-                string command = "Delete from Carriers where carrier_id= " + record_id;
+                string record_id = this.dataGridView1.CurrentRow.Cells["city_id"].Value.ToString();
+                string command = "Delete from Cities where city_id= " + record_id;
 
                 SqlDataAdapter dataAdapter2 = new SqlDataAdapter();
 
@@ -163,24 +165,20 @@ namespace InterShipmentSystem
             }
         }
 
-        private void createButton_Click(object sender, EventArgs e)
-        {
-            NewCarrierForm newCarrierForm = new NewCarrierForm();
-            newCarrierForm.Show();
-        }
-
-        private void CarriersForm_Activated(object sender, EventArgs e)
+        private void CitiesForm_Activated(object sender, EventArgs e)
         {
             if(MainForm.connectionState)
             {
                 GetData(dataAdapter.SelectCommand.CommandText);
             }
+
             
         }
 
-        private void groupBox1_Enter(object sender, EventArgs e)
+        private void createButton_Click(object sender, EventArgs e)
         {
-
+            NewCityForm newCityForm = new NewCityForm();
+            newCityForm.Show();
         }
     }
 }

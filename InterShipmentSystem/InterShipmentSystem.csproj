@@ -55,6 +55,12 @@
     <Compile Include="CarriersForm.Designer.cs">
       <DependentUpon>CarriersForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="CitiesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CitiesForm.Designer.cs">
+      <DependentUpon>CitiesForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="ClientsForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -66,6 +72,12 @@
     </Compile>
     <Compile Include="CreateOrderForm.Designer.cs">
       <DependentUpon>CreateOrderForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InfoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InfoForm.Designer.cs">
+      <DependentUpon>InfoForm.cs</DependentUpon>
     </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
@@ -79,6 +91,12 @@
     </Compile>
     <Compile Include="NewCarrierForm.Designer.cs">
       <DependentUpon>NewCarrierForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewCityForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewCityForm.Designer.cs">
+      <DependentUpon>NewCityForm.cs</DependentUpon>
     </Compile>
     <Compile Include="NewClientForm.cs">
       <SubType>Form</SubType>
@@ -103,17 +121,26 @@
     <EmbeddedResource Include="CarriersForm.resx">
       <DependentUpon>CarriersForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CitiesForm.resx">
+      <DependentUpon>CitiesForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ClientsForm.resx">
       <DependentUpon>ClientsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CreateOrderForm.resx">
       <DependentUpon>CreateOrderForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="InfoForm.resx">
+      <DependentUpon>InfoForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NewCarrierForm.resx">
       <DependentUpon>NewCarrierForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewCityForm.resx">
+      <DependentUpon>NewCityForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NewClientForm.resx">
       <DependentUpon>NewClientForm.cs</DependentUpon>
